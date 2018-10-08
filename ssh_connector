@@ -6,3 +6,4 @@ port_ssh=$3
 remote_command=$4
 
 ssh -p $3 $ssh_user@$remote_host $remote_command
+echo $?
