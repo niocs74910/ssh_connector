@@ -1,9 +1,14 @@
 #!/bin/bash
  
+# déclaration fonction ssh_connector
+ssh_connector ()
+{
+ssh -p $3 $ssh_user@$remote_host $remote_command
+echo $?
+}
 ssh_user=$1
 remote_host=$2
 port_ssh=$3
 remote_command=$4
 
-ssh -p $3 $ssh_user@$remote_host $remote_command
-echo $?
+ssh_connector $1 $2 $3 $4
